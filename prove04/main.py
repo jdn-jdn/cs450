@@ -56,7 +56,7 @@ class ID3DecisionTreeModel:
     def calc_entropy(self, p):
         """
         A method for computing entropy. The best feature to pick as the one to classify on is the one that yields the
-        most information gain, i.e., the one with the highest entropy.
+        most information gain, i.e., the one with the lowest entropy.
         :param p: proportion of given attribute
         :return: calculated entropy
         """
