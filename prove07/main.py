@@ -405,7 +405,6 @@ def run_test(dataset_option, selection_name):
 
     # Instantiate the classifier object and train
     clf = MultiLayeredPerceptronClassifier(nodes_in_layers, num_epochs, learning_rate)
-    # clf = MultiLayeredPerceptronClassifier([3, 2], num_epochs = 3000, learning_rate = 0.1)
     clf.fit(X_train, y_train)
     predictions = clf.predict(X_test)
 
@@ -433,6 +432,7 @@ def run_test(dataset_option, selection_name):
     print('Classification report for sklearn neural network:')
     print(classification_report(y_test, sklearn_predictions))
 
+    # Accuracy scores for custom and sklearn neural networks
     print("Accuracy score for custom neural network: %" +
           str(round(accuracy_score(y_test, predictions) * 100, 3)))
     print()
