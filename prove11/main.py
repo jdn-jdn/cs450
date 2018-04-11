@@ -26,7 +26,7 @@ def prepare_dataset(dataset_option):
     :return: NumPy arrays of data (X) and targets (y)
     """
     if dataset_option == "transfusion":
-        df = pd.read_csv('C:/Users/josed/PycharmProjects/prove11/blood-transfusion-service-center.csv')
+        df = pd.read_csv('C:/Users/josed/PycharmProjects/cs450/prove11/blood-transfusion-service-center.csv')
 
         X, y = df.drop("Class", axis = 1).values, df[["Class"]].values
 
@@ -38,7 +38,7 @@ def prepare_dataset(dataset_option):
 
         return X_train, X_test, y_train, y_test
     elif dataset_option == "phoneme":
-        df = pd.read_csv('C:/Users/josed/PycharmProjects/prove11/phoneme.csv')
+        df = pd.read_csv('C:/Users/josed/PycharmProjects/cs450/prove11/phoneme.csv')
 
         X, y = df.drop("Class", axis = 1).values, df[["Class"]].values
 
@@ -50,7 +50,7 @@ def prepare_dataset(dataset_option):
 
         return X_train, X_test, y_train, y_test
     elif dataset_option == "digits":
-        df = pd.read_csv('C:/Users/josed/PycharmProjects/prove11/pendigits.csv')
+        df = pd.read_csv('C:/Users/josed/PycharmProjects/cs450/prove11/pendigits.csv')
 
         X, y = df.drop("class", axis = 1).values, df[["class"]].values
 
@@ -62,7 +62,7 @@ def prepare_dataset(dataset_option):
 
         return X_train, X_test, y_train, y_test
     elif dataset_option == "magic":
-        df = pd.read_csv('C:/Users/josed/PycharmProjects/prove11/magic-telescope.csv')
+        df = pd.read_csv('C:/Users/josed/PycharmProjects/cs450/prove11/magic-telescope.csv')
 
         X, y = df.drop(columns=["ID", "class:"], axis = 1).values, df[["class:"]].values
 
@@ -169,7 +169,7 @@ def run_test(dataset_option):
     print(">>> Accuracy for GradientBoostingClassifier: %" + str(round(100 * accuracy_score(y_test, y_pred), 3)))
     print()
 
-    # # Voting Classifier
+    # Voting Classifier
     m = VotingClassifier(
         estimators = [
             ('lr', MLPClassifier()),
